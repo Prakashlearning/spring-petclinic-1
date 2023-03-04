@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'GRADLE_17' }
+    agent { label 'GRADLE_8' }
     stages {
         stage('vcs') {
             steps {
@@ -10,7 +10,8 @@ pipeline {
         stage('gradle build') {
             steps {
                 sh '/opt/gradle/gradle-7.4.2/bin/gradle build'
-        }
+            }
+        }  
         stage('post build') {
             steps {
                 archiveArtifacts artifacts: '**/*.jar',
