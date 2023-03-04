@@ -7,13 +7,9 @@ pipeline {
                     branch: 'declarative'
             }
         }
-        stage('package') {
+        stage('gradle build') {
             steps {
-                sh 'gradle package'
-            }
-        stage('compile project') {
-            steps {
-                sh 'gradle clean -b build'
+                sh '/opt/gradle/gradle-7.4.2/bin/gradle build'
         }
         stage('post build') {
             steps {
