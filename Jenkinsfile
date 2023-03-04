@@ -9,7 +9,7 @@ pipeline {
         }
         stage('gradle build') {
             tools {
-                jdk 'JDK_11'
+                jdk 'JDK_17'
             }
             steps {
                 sh '/opt/gradle/gradle-7.4.2/bin/gradle build'
