@@ -11,6 +11,9 @@ pipeline {
             steps {
                 sh 'gradle package'
             }
+        stage('compile project') {
+            steps {
+                sh 'gradle clean -b build'
         }
         stage('post build') {
             steps {
