@@ -12,7 +12,7 @@ pipeline {
                 jdk 'JDK_11'
             }
             steps {
-                sh '/opt/gradle/gradle-7.4.2/bin/gradle build'
+                sh 'export PATH="/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin:$PATH"
             }
         }  
         stage('post build') {
