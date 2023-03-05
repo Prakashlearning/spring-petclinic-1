@@ -19,7 +19,7 @@ pipeline {
             steps {
                 archiveArtifacts artifacts: '**/*.jar',
                 onlyIfSuccessful: true
-                junit testResults: '**/TEST-*.xml'
+                junit testResults: '**/test-results/TEST-*.xml'
             }
         }
     }
