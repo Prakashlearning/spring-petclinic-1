@@ -9,7 +9,7 @@ pipeline {
         }
         stage('gradle build') {
             tools{
-                jdk 'JDK_8'
+                jdk 'JDK_17'
             }
             steps {
                 sh 'export PATH="/opt/gradle/gradle-7.4.2/bin:$PATH" && gradle build'
