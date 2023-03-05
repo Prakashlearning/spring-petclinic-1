@@ -1,7 +1,5 @@
 pipeline {
     agent { label 'GRADLE_8' }
-    tools { jdk 'JDK_17'
-            gradle 'GRADLE_7' }
     stages {
         stage('vcs') {
             steps {
@@ -11,7 +9,7 @@ pipeline {
         }
         stage('gradle build') {
             steps {
-                sh 'export PATH="/usr/lib/jvm/java-1.17.0-openjdk-amd64/bin:$PATH" && gradle build'
+                sh 'gradle build'
             }
         }  
         stage('post build') {
