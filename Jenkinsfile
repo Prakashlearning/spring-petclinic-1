@@ -11,8 +11,7 @@ pipeline {
         }
         stage('gradle build') {
             steps {
-                sh 'export PATH=/opt/gradle/gradle-7.4.2/bin:${PATH}'
-                sh 'gradle build'
+                sh 'export PATH="/usr/lib/jvm/java-1.17.0-openjdk-amd64/bin:$PATH" && gradle build'
             }
         }  
         stage('post build') {
