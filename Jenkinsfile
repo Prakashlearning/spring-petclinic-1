@@ -12,12 +12,14 @@ pipeline {
         stage('gradle build') {
             steps {
                 sh 'export PATH=/opt/gradle/gradle-7.4.2/bin:${PATH}'
+                sh 'gradle build'
             }
         }  
         stage('post build') {
             steps {
                 archiveArtifacts artifacts: '**/*.jar',
                                  allowEmptyArchive: true,
+
                                  fingerprint: true,
                                  onlyIfSuccessful: true
                 junit testResults: '**/surefire-reports/TEST-*.xml'
