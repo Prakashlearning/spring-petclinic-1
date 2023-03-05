@@ -17,9 +17,7 @@ pipeline {
         }  
         stage('post build') {
             steps {
-                archiveArtifacts artifacts: '**/*.txt',
-                                 allowEmptyArchive: true,
-                                 fingerprint: true,
+                archiveArtifacts artifacts: '**/*.jar'
                                  onlyIfSuccessful: true
                 junit testResults: '**/surefire-reports/TEST-*.xml'
             }
