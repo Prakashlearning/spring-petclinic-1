@@ -9,14 +9,13 @@ pipeline {
         }
         stage('gradle build') {
             steps {
-                sh 'gradle build'
+                sh "/opt/gradle/gradle-7.4.2/gradle build"
             }
         }  
         stage('post build') {
             steps {
                 archiveArtifacts artifacts: '**/*.jar',
                                  allowEmptyArchive: true,
-
                                  fingerprint: true,
                                  onlyIfSuccessful: true
                 junit testResults: '**/surefire-reports/TEST-*.xml'
