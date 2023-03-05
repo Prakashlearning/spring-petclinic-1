@@ -9,7 +9,7 @@ pipeline {
         }
         stage('gradle build') {
             steps {
-                sh "/opt/gradle/gradle-7.4.2/gradle build"
+                sh 'export PATH="/opt/gradle/gradle-7.4.2/bin:$PATH" && gradle build'
             }
         }  
         stage('post build') {
