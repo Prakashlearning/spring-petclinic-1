@@ -8,11 +8,8 @@ pipeline {
             }
         }
         stage('gradle build') {
-            tools {
-                jdk 'JDK_17'
-            }
             steps {
-                sh '/opt/gradle/gradle-7.4.2/bin/gradle build'
+                sh '/opt/gradle/gradle-7.5.1/bin/gradle build'
             }
         }  
         stage('post build') {
