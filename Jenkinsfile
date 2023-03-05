@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'GRADLE_8' }
+    agent { label 'GRADLE_7' }
     stages {
         stage('vcs') {
             steps {
