@@ -1,5 +1,7 @@
 pipeline {
     agent { label 'GRADLE_8' }
+    tools { jdk 'JDK_17'
+            gradle 'GRADLE_7' }
     stages {
         stage('vcs') {
             steps {
@@ -9,7 +11,7 @@ pipeline {
         }
         stage('gradle build') {
             steps {
-                sh '/opt/gradle/gradle-7.4.2/bin/gradle build'
+                sh 'export PATH=/opt/gradle/gradle-7.4.2/bin:${PATH}'
             }
         }  
         stage('post build') {
